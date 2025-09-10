@@ -1,10 +1,7 @@
-package week3;
+package week7.suitcase;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.NoSuchElementException;
-
-import static java.lang.constant.ConstantDescs.NULL;
 
 public class Suitcase {
 
@@ -20,7 +17,6 @@ public class Suitcase {
     }
 
     public void addThing(Thing thing) {
-
         if (totalWeight + thing.getWeight() <= weightLimit) { // siin loogika, et mittel isada järgmist eset!
             this.things.add(thing);
             totalWeight += thing.getWeight();
@@ -28,7 +24,6 @@ public class Suitcase {
     }
 
     public void printThings() {
-
         for (Thing t : this.things) {
             System.out.println(t);
         }
@@ -36,7 +31,6 @@ public class Suitcase {
     }
 
     public Thing heaviestThing() {
-
         return things
                 .stream()
                 .max(Comparator.comparing(Thing::getWeight))
@@ -45,7 +39,6 @@ public class Suitcase {
 
     @Override
     public String toString() {
-
         if (totalWeight == 0) {
             return "empty" + " (" + totalWeight + "kg)";
         } else {

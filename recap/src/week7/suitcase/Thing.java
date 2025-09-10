@@ -1,4 +1,4 @@
-package week3;
+package week7.suitcase;
 
 public class Thing {
     private String name;

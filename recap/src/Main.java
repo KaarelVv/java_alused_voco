@@ -1,9 +1,10 @@
-import week2.Ex25;
-import week2.Ex26;
-import week2.Ex36;
-import week3.Container;
-import week3.Suitcase;
-import week3.Thing;
+import week7.dictionary.Dictionary;
+import week7.dictionary.TextUserInterface;
+import week7.suitcase.Container;
+import week7.suitcase.Thing;
+
+import java.util.ArrayList;
+import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -34,6 +35,8 @@ public class Main {
 //        Ex36 ex36 = new Ex36();
 //        ex36.readingNumbers();
 
+        //-----------------------------------------------------//
+
         Thing book = new Thing("Atomic habit", 2);
         Thing mobile = new Thing("Nokia 3310", 1);
         Thing brick = new Thing("Brick", 4);
@@ -63,20 +66,55 @@ public class Main {
 //        Thing heaviest = suitcase.heaviestThing();
 //        System.out.println("The heaviest thing: " + heaviest);
 
-        Suitcase tomsCase = new Suitcase(10);
-        tomsCase.addThing(book);
-        tomsCase.addThing(mobile);
 
-        Suitcase georgesCase = new Suitcase(10);
-        georgesCase.addThing(brick);
+        //----------------------------------------------
+//        Suitcase tomsCase = new Suitcase(10);
+//        tomsCase.addThing(book);
+//        tomsCase.addThing(mobile);
+//
+//        Suitcase georgesCase = new Suitcase(10);
+//        georgesCase.addThing(brick);
+//
+//        Container container = new Container(1000);
+//        container.addSuitcase(tomsCase);
+//        container.addSuitcase(georgesCase);
+//
+//        System.out.println(container);
+//
+//        System.out.println("There are the following things in the container suitcases:");
+//        container.printThings();
+//        Container container = new Container(1000);
+//        addSuitcasesFullOfBricks(container);
+//        System.out.println(container);
 
-        Container container = new Container(1000);
-        container.addSuitcase(tomsCase);
-        container.addSuitcase(georgesCase);
+//        Dictionary dictionary = new Dictionary();
+//
+//        dictionary.add("apina", "monkey");
+//        dictionary.add("banaani", "banana");
+//        System.out.println(dictionary.amountOfWords());
+//
+//        dictionary.add("cembalo", "harpsichord");
+//        System.out.println(dictionary.amountOfWords());
 
-        System.out.println(container);
+//        Dictionary dictionary = new Dictionary();
+//        dictionary.add("apina", "monkey");
+//        dictionary.add("banaani", "banana");
+//        dictionary.add("cembalo", "harpsichord");
+//
+//        ArrayList<String> translations = dictionary.translationList();
+//        for(String translation: translations) {
+//            System.out.println(translation);
+//        }
 
-        System.out.println("There are the following things in the container suitcases:");
-        container.printThings();
+        Scanner reader = new Scanner(System.in);
+        Dictionary dict = new Dictionary();
+
+        TextUserInterface ui = new TextUserInterface(reader, dict);
+        ui.start();
+
     }
+
+
+//    public static void addSuitcasesFullOfBricks(Container container) {
+//    }
 }
