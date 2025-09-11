@@ -1,4 +1,4 @@
-package week5;
+package week5.apartment;
 
 public class Apartment {
     private int rooms;
@@ -12,11 +12,18 @@ public class Apartment {
     }
 
 
-    public boolean larger(Apartment testApartment){
-        if(this.squareMeters > testApartment.squareMeters) {
-            return true;
-        }else{
-         return false;
-        }
+
+
+    public boolean larger(Apartment otherApartment){
+        return this.squareMeters > otherApartment.squareMeters;
+    }
+
+    public int priceDifference(Apartment otherApartment){
+
+        return 0;
+    }
+
+    public boolean moreExpensiveThan(Apartment otherApartment) {
+        return true;
     }
 }
