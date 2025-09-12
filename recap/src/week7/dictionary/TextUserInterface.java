@@ -13,58 +13,44 @@ public class TextUserInterface {
     }
 
     public void start() {
-        label:
+        System.out.println("""
+                Statements:
+                  add - adds a word pair to the dictionary
+                  translate - asks a word and prints its translation
+                  quit - quits the text user interface""");
+        System.out.println();
         while (true) {
             System.out.print("Statement: ");
-            String input = reader.next();
-            switch (input) {
-                case "quit":
-                    System.out.println("Cheers!");
-                    break label;
-                case "add":
-                    System.out.print("In Finnish: ");
-                    String key = reader.next();
-                    System.out.print("Translation: ");
-                    String value = reader.next();
-                    this.dictionary.add(key, value);
-                    break;
-                case "translate":
-                    System.out.print("Give a word: ");
-                    String word = reader.next();
-                    System.out.print("Translation: ");
-                    System.out.print(this.dictionary.translate(word));
-                    break;
-                default:
-                    System.out.println("Unknown statement");
-                    break;
+            String input = reader.nextLine();
+            if (input.equals("quit")) {
+                System.out.println("Cheers!");
+                break;
+            } else if (input.equals("add")) {
+                this.add();
+            } else if (input.equals("translate")) {
+                this.translate();
+            } else {
+                System.out.println("Unknown statement");
             }
+            System.out.println();
         }
 
     }
 
-//    public void start() {
-//        while (true) {
-//            System.out.print("Statement: ");
-//            String input = reader.next();
-//            if (input.equals("quit")) {
-//                System.out.println("Cheers!");
-//                break;
-//            } else if (input.equals("add")) {
-//                System.out.print("In Finnish: ");
-//                String key = reader.next();
-//                System.out.print("Translation: ");
-//                String value = reader.next();
-//                this.dictionary.add(key,value);
-//            } else if (input.equals("translate")) {
-//                System.out.print("Give a word: ");
-//                String word = reader.next();
-//                System.out.print("Translation: ");
-//                System.out.print(this.dictionary.translate(word));
-//            } else {
-//                System.out.println("Unknown statement");
-//            }
-//        }
-//
-//    }
+    private void translate() {
+        System.out.print("Give a word: ");
+        String word = reader.nextLine();
+        System.out.print("Translation: ");
+        System.out.print(this.dictionary.translate(word));
+    }
+
+    private void add() {
+        System.out.print("In Finnish: ");
+        String key = reader.nextLine();
+        System.out.print("Translation: ");
+        String value = reader.nextLine();
+        this.dictionary.add(key, value);
+    }
+
 
 }
