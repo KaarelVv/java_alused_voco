@@ -16,5 +16,11 @@ public class Main {
 
 //        Ex19 ex19 = new Ex19();
 //        ex19.ageCheck();
+
+//        Ex21 ex21 = new Ex21();
+//        ex21.leapYear();
+
+        Ex22 ex22 = new Ex22();
+        ex22.askPassword();
     }
 }
