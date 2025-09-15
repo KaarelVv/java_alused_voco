@@ -1,5 +1,7 @@
 package week1;
 
+import week2.Ex39;
+
 public class Main {
     public static void main(String[] args) {
         //        Ex16 ex16 = new Ex16();
@@ -20,7 +22,13 @@ public class Main {
 //        Ex21 ex21 = new Ex21();
 //        ex21.leapYear();
 
-        Ex22 ex22 = new Ex22();
-        ex22.askPassword();
+//        Ex22 ex22 = new Ex22();
+//        ex22.askPassword();
+
+        Ex39 ex39 = new Ex39();
+//        ex39.printStars(5);
+//        ex39.printSquare(4);
+//        ex39.printRectangle(4,3);
+        ex39.printTriangle(3);
     }
 }
