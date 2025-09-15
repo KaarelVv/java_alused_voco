@@ -1,5 +1,7 @@
 package week5.apartment;
 
+import static java.lang.Math.abs;
+
 public class Apartment {
     private int rooms;
     private int squareMeters;
@@ -19,11 +21,14 @@ public class Apartment {
     }
 
     public int priceDifference(Apartment otherApartment){
+        int price = this.pricePerSquareMeter * this.squareMeters;
+        int priceOfOther = otherApartment.pricePerSquareMeter * otherApartment.squareMeters;
 
-        return 0;
+        return abs(price - priceOfOther);
     }
 
     public boolean moreExpensiveThan(Apartment otherApartment) {
-        return true;
+
+        return (this.pricePerSquareMeter * this.squareMeters) > (otherApartment.pricePerSquareMeter * otherApartment.squareMeters);
     }
 }
