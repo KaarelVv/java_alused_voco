@@ -12,26 +12,32 @@ public class Main {
 
         ArrayList<Student> list = new ArrayList<Student>();
         Scanner input = new Scanner(System.in);
-        
-        while(true){
-            System.out.print("Name");
-            String name = input.next();
-            if(name.isEmpty()){
+
+        while (true) {
+            System.out.print("name: ");
+            String name = input.nextLine();
+            if (name.isEmpty()) {
                 break;
             }
-            System.out.println("studentnumber");
-            String number = input.next();
-            if(number.isEmpty()){
+            System.out.print("student-number: ");
+            String number = input.nextLine();
+            if (number.isEmpty()) {
                 break;
             }
             list.add(new Student(name, number));
 
         }
-        for (Student s: list){
+        for (Student s : list) {
             System.out.println(s);
         }
 
-
+        System.out.print("Give the search term: ");
+        String search = input.nextLine();
+        System.out.println("Result: ");
+        for (Student st : list) {
+            if (st.getName().contains(search)) {
+                System.out.println(st);
+            }
+        }
     }
-
 }
