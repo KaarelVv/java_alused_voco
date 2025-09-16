@@ -19,7 +19,7 @@ public class CashRegister {
             return cashGiven;
     }
 
-    public boolean payEconomical(LyyraCard card){
+    public boolean payEconomical(LyyraCard card) {
         if (card.balance() >= 2.50) {
             this.economicalSold++;
             card.pay(4.0);
@@ -47,12 +47,14 @@ public class CashRegister {
             return false;
 
     }
+
     public void loadMoneyToCard(LyyraCard card, double sum) {
-        if (sum > 0){
+        if (sum > 0) {
             card.loadMoney(sum);
             this.cashInRegister += sum;
         }
     }
+
     public String toString() {
         return "money in register " + cashInRegister + " economical lunches sold: " + economicalSold + " gourmet lunches sold: " + gourmetSold;
     }

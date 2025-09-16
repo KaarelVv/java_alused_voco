@@ -15,10 +15,10 @@ public class LyyraCard {
         this.balance += amount;
     }
 
-    public boolean pay(double amount){
-        if(this.balance < amount){
+    public boolean pay(double amount) {
+        if (this.balance < amount) {
             return false;
-        }else {
+        } else {
             this.balance -= amount;
             return true;
         }
