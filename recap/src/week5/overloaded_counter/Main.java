@@ -2,7 +2,7 @@ package week5.overloaded_counter;
 
 public class Main {
     public static void main(String[] args) {
-        Counter counter = new Counter(2,true);
+        Counter counter = new Counter(10,true);
         System.out.println(counter.value());
         counter.decrease();
         System.out.println(counter.value());
