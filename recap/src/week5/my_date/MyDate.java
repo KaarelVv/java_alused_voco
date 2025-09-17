@@ -45,20 +45,36 @@ public class MyDate {
     }
 
     public void advance(int numberOfDays){
+        int totalPresentDays = this.day + (this.month * 30) + (this.year * 360);
+
+
+
         this.day += numberOfDays ;
     }
 
     public MyDate afterNumberOfDays(int days){
         int totalPresentDays = this.day + (this.month * 30) + (this.year * 360);
 
-        int totalFutereDays = totalPresentDays + days;
+        int totalFutureDays = totalPresentDays + days;
 
-        int years = totalFutereDays / 360;
-        int remainingDaysFromYear = totalFutereDays % 360;
+        int years = totalFutureDays / 360;
+        int remainingDaysFromYear = totalFutureDays % 360;
         int month = remainingDaysFromYear / 30;
         int day  = remainingDaysFromYear % 30 ;
 
 
         return new MyDate(day, month, years);
+    }
+
+    public int differenceInYears(MyDate comparedDate){
+        int totalPresentDays = this.day + (this.month * 30) + (this.year * 365);
+        int totalComparedDays = comparedDate.day + (comparedDate.month * 30) + (comparedDate.year * 365);
+
+
+
+
+
+
+        return abs(totalPresentDays / 365 - totalComparedDays / 365);
     }
 }
