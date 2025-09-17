@@ -1,23 +1,39 @@
 package week5.reformatory;
 
+import week5.my_date.MyDate;
+
+import java.util.Calendar;
+
 public class Person {
     private String name;
     private int age;
     private int height;
     private int weight;
+    private MyDate birthMyDate;
 
-    public Person(String name, int age, int height, int weight) {
+    public Person(String name, int day, int month, int year) {
         this.name = name;
-        this.age = age;
-        this.height = height;
-        this.weight = weight;
+        this.weight = 0;
+        this.height = 0;
+        this.birthMyDate = new MyDate(day, month, year);
+    }
+
+
+//    public Person(String name) {
+//        this.name = name;
+//        this.age = 0;
+//        this.weight = 0;
+//        this.height = 0;
+//    }
+
+    public Person(String name, MyDate birthday) {
+        this.name = name;
+        this.birthMyDate = birthday;
     }
 
     public Person(String name) {
         this.name = name;
-        this.age = 0;
-        this.weight = 0;
-        this.height = 0;
+        this.birthMyDate = new MyDate(Calendar.getInstance().get(Calendar.DATE), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.YEAR));
     }
 
     public void printPerson() {
@@ -29,11 +45,7 @@ public class Person {
     }
 
     public boolean adult() {
-        if (this.age < 18) {
-            return false;
-        }
-
-        return true;
+        return this.age >= 18;
     }
 
     public double weightIndex() {
@@ -42,8 +54,9 @@ public class Person {
         return this.weight / (heightInMeters * heightInMeters);
     }
 
+    @Override
     public String toString() {
-        return this.name + " I am " + this.age + " years old, my weight index is " + this.weightIndex();
+        return name + ", born " + birthMyDate;
     }
 
     public void setHeight(int height) {
@@ -64,5 +77,34 @@ public class Person {
 
     public String getName() {
         return this.name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int age() {
+        // calculate the age based on the birthday and the current day
+        // you get the current day as follows:
+        // Calendar.getInstance().get(Calendar.DATE);
+        // Calendar.getInstance().get(Calendar.MONTH) + 1; // January is 0 so we add one
+        // Calendar.getInstance().get(Calendar.YEAR);
+
+        int getDay = Calendar.getInstance().get(Calendar.DATE);
+        int getMonth = Calendar.getInstance().get(Calendar.MONTH) + 1;
+        int getYear = Calendar.getInstance().get(Calendar.YEAR);
+        MyDate todayDate = new MyDate(getDay, getMonth, getYear);
+
+
+        return this.birthMyDate.differenceInYears(todayDate);
+    }
+
+    public boolean olderThan(Person compared) {
+
+        return this.birthMyDate.getDay() > compared.birthMyDate.getDay();
     }
 }

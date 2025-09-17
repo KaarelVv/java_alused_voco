@@ -31,12 +31,8 @@ public class MyDate {
         }
 
         // years and months the same, we'll compare the days
-        if ( this.year == compared.year && this.month == compared.month &&
-                this.day < compared.day ) {
-            return true;
-        }
-
-        return false;
+        return this.year == compared.year && this.month == compared.month &&
+                this.day < compared.day;
     }
 
     public void advance(){
@@ -46,8 +42,6 @@ public class MyDate {
 
     public void advance(int numberOfDays){
         int totalPresentDays = this.day + (this.month * 30) + (this.year * 360);
-
-
 
         this.day += numberOfDays ;
     }
@@ -70,11 +64,30 @@ public class MyDate {
         int totalPresentDays = this.day + (this.month * 30) + (this.year * 365);
         int totalComparedDays = comparedDate.day + (comparedDate.month * 30) + (comparedDate.year * 365);
 
-
-
-
-
-
         return abs(totalPresentDays / 365 - totalComparedDays / 365);
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 }
