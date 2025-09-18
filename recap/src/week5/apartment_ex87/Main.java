@@ -1,4 +1,4 @@
-package week5.apartment;
+package week5.apartment_ex87;
 
 public class Main {
     public static void main(String[] args) {

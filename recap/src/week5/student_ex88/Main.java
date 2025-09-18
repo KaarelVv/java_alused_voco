@@ -1,4 +1,4 @@
-package week5.student;
+package week5.student_ex88;
 
 import java.util.ArrayList;
 import java.util.Scanner;

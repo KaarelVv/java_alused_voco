@@ -1,4 +1,4 @@
-package week5.my_date;
+package week5.my_date_ex91_extended;
 
 public class Main {
     public static void main(String[] args) {

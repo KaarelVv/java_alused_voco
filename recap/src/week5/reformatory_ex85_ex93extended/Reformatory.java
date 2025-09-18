@@ -1,4 +1,4 @@
-package week5.reformatory;
+package week5.reformatory_ex85_ex93extended;
 
 
 public class Reformatory {

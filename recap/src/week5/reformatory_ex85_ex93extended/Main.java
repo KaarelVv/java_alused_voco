@@ -1,6 +1,6 @@
-package week5.reformatory;
+package week5.reformatory_ex85_ex93extended;
 
-import week5.my_date.MyDate;
+import week5.my_date_ex91_extended.MyDate;
 
 public class Main {
     public static void main(String[] args) {

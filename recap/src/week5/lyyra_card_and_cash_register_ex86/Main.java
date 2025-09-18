@@ -1,4 +1,4 @@
-package week5.lyyra_card_and_cash_register;
+package week5.lyyra_card_and_cash_register_ex86;
 
 public class Main {
     public static void main(String[] args) {

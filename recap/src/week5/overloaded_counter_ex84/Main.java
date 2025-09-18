@@ -1,4 +1,4 @@
-package week5.overloaded_counter;
+package week5.overloaded_counter_ex84;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package week5.apartment;
+package week5.apartment_ex87;
 
 import static java.lang.Math.abs;
 

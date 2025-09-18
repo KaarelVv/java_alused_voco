@@ -1,4 +1,4 @@
-package week5.team_and_players;
+package week5.team_and_players_ex90;
 
 public class Player {
     private final String name;
