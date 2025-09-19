@@ -42,7 +42,6 @@ public class Card implements Comparable<Card> {
 
     @Override
     public String toString() {
-
         return this.values.get(this.value)
                 + " of " + this.suits.get(this.suit);
     }
