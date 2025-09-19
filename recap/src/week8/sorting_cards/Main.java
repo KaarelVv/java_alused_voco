@@ -1,0 +1,39 @@
+package week8.sorting_cards;
+
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
+public class Main {
+    static void main() {
+//        Card first = new Card(2, Card.DIAMONDS);
+//        Card second = new Card(2, Card.CLUBS);
+//        Card third = new Card(12, Card.HEARTS);
+//
+//        System.out.println(first);
+//        System.out.println(second);
+//        System.out.println(third);
+//
+//
+//        ArrayList<Card> cards = new ArrayList<>();
+//
+//        cards.add(first);
+//        cards.add(second);
+//        cards.add(third);
+//
+//        System.out.println(cards);
+//        Collections.sort(cards);
+//        System.out.println(cards);
+
+        Hand hand = new Hand();
+
+        hand.add( new Card(2, Card.SPADES) );
+        hand.add( new Card(14, Card.CLUBS) );
+        hand.add( new Card(12, Card.HEARTS) );
+        hand.add( new Card(2, Card.CLUBS) );
+
+        hand.sort();
+        hand.print();
+    }
+}
