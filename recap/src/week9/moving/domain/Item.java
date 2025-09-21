@@ -4,8 +4,8 @@ package week9.moving.domain;
 
 public class Item implements Thing, Comparable<Item> {
 
-    private String name;
-    private int volume;
+    private final String name;
+    private final int volume;
 
     public Item(String name, int volume) {
         this.name = name;

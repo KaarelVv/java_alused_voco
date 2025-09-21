@@ -3,9 +3,8 @@ package week9.moving.domain;
 import java.util.ArrayList;
 
 public class Box implements Thing {
-    private int maximumCapacity;
-    private ArrayList<Thing> stuff = new ArrayList<>();
-    private int totalVolume;
+    private final int maximumCapacity;
+    private final ArrayList<Thing> box = new ArrayList<>();
 
     public Box(int maximumCapacity) {
         this.maximumCapacity = maximumCapacity;
@@ -13,9 +12,8 @@ public class Box implements Thing {
 
 
     public boolean addThing(Thing thing) {
-
-        if (getVolume() <= maximumCapacity) {
-            stuff.add(thing);
+        if (getVolume() <= this.maximumCapacity) {
+            this.box.add(thing);
             return true;
         }
         return false;
@@ -23,9 +21,10 @@ public class Box implements Thing {
 
     @Override
     public int getVolume() {
-        for (Thing i : stuff){
-            System.out.println(i);
+        int i=0;
+        for (Thing thing : this.box){
+            i += thing.getVolume();
         }
-        return 0;
+        return i;
     }
 }

@@ -11,10 +11,9 @@ import java.util.List;
 
 
 public class Main {
-    static void main() {
-
- //       Thing item = new Item("toothbrash", 2);
- //       System.out.println(item);
+    public static void main(String[] args) {
+        //       Thing item = new Item("toothbrash", 2);
+        //       System.out.println(item);
 
 //        List<Item> items = new ArrayList<Item>();
 //        items.add(new Item("passport", 2));
@@ -32,16 +31,25 @@ public class Main {
         things.add(new Item("book", 4));
         things.add(new Item("circular saw", 8));
 
-        // we create a packer which uses boxes whose valume is 10
-        Packer packer = new Packer(10);
+        // we create a packer which uses boxes whose volume is 10
+        Packer packer = new Packer(5);
 
         // we ask our packer to pack things into boxes
         List<Box> boxes = packer.packThings( things );
 
-        System.out.println("number of boxes: "+boxes.size());
+        System.out.println("number of boxes: " + boxes.size());
 
         for (Box box : boxes) {
             System.out.println("  things in the box: "+box.getVolume()+" dm^3");
         }
+
+//        Box box = new Box(10);
+//
+//        box.addThing(new Item("passport", 2));
+//        box.addThing(new Item("toothbrash", 1));
+//
+//        System.out.println(box.getVolume());
+
+
     }
 }

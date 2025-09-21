@@ -6,7 +6,9 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class Main {
-    static void main() {
+
+    public static void main() {
+
 //        Card first = new Card(2, Card.DIAMONDS);
 //        Card second = new Card(2, Card.CLUBS);
 //        Card third = new Card(12, Card.HEARTS);
