@@ -1,7 +1,7 @@
 package week9.temps.application;
 
 public class Thermometer implements Sensor {
-    boolean isOn = false;
+    private boolean isOn = false;
 
     @Override
     public boolean isOn() {

@@ -2,8 +2,8 @@ package week10.farm_simulator.farmsimulator;
 
 public class BulkTank {
 
-    private double volume = 0;
-    private double capacity;
+    private double volume;
+    private final double capacity;
 
     public BulkTank(double capacity) {
         this.capacity = capacity;
@@ -11,13 +11,14 @@ public class BulkTank {
 
     public BulkTank() {
         this(2000);
+        this.volume = 0;
     }
 
     public double getVolume() {
         return volume;
     }
 
-    public double getCapicity() {
+    public double getCapacity() {
         return capacity;
     }
 
@@ -26,17 +27,17 @@ public class BulkTank {
     }
 
     public void addToTank(double amount) {
-        if (howMuchFreeSpace() + amount <= this.capacity) {
+        if (getVolume() + amount < this.capacity) {
             this.volume += amount;
         } else
             this.volume = this.capacity;
     }
 
     public void getFromTank(double amount) {
-        if (this.volume >= amount) {
+        if(this.volume - amount <= 0){
+            this.volume = 0;
+        }else
             this.volume -= amount;
-        } else
-            this.volume = this.volume - amount;
     }
 
     @Override

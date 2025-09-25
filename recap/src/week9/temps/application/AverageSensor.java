@@ -56,6 +56,6 @@ public class AverageSensor implements Sensor {
     }
 
     public List<Integer> readings() {
-        return new ArrayList<>(temps);
+        return temps;
     }
 }
