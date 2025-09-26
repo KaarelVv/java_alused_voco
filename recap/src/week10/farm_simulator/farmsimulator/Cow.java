@@ -29,20 +29,20 @@ public class Cow implements Milkable, Alive {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public double getAmount() {
-        return amount;
+        return this.amount;
     }
 
     public double getCapacity() {
-        return capacity;
+        return this.capacity;
     }
 
     @Override
     public String toString() {
-        return name + ' ' + amount + "/ " + capacity;
+        return this.name + ' ' + this.amount + "/ " + this.capacity;
     }
 
     @Override

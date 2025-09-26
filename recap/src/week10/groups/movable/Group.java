@@ -2,6 +2,7 @@ package week10.groups.movable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class Group implements Movable {
     private List<Movable> groups = new ArrayList<>();
@@ -23,12 +24,11 @@ public class Group implements Movable {
 
     @Override
     public String toString() {
-
-        int j = 0;
-        for (int i = 0; i < this.groups.size(); i++) {
-            System.out.println( groups.get(j));
-            j = i + 1;
+        StringJoiner sj = new StringJoiner(System.lineSeparator());
+        for (Movable m : groups) {
+            sj.add(String.valueOf(m));
         }
-       return "";
+        return sj.toString();
+
     }
 }

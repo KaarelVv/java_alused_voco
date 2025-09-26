@@ -5,35 +5,38 @@ import java.util.Collection;
 public class Barn {
 
     private final BulkTank bulkTank;
-    Boolean activated = true;
+
 
     public Barn(BulkTank bulkTank) {
         this.bulkTank = bulkTank;
     }
 
     public BulkTank getBulkTank() {
-        return bulkTank;
+        return this.bulkTank;
     }
 
     public void installMilkingRobot(MilkingRobot milkingRobot) {
-        activated = true;
-        milkingRobot.setBulkTank(bulkTank);
+        milkingRobot.setBulkTank(this.bulkTank);
+
     }
 
     public void takeCareOf(Cow cow) {
-        if (activated) {
-
+        if (getBulkTank() != null) {
+            this.bulkTank.addToTank(cow.milk());
         } else throw new IllegalStateException();
 
     }
 
     public void takeCareOf(Collection<Cow> cows) {
-
+        if (getBulkTank() != null) {
+            for (Cow cow : cows) {
+                this.bulkTank.addToTank(cow.milk());
+            }
+        } else throw new IllegalStateException();
     }
 
     @Override
     public String toString() {
-        return "" +
-                bulkTank;
+        return this.bulkTank.toString();
     }
 }

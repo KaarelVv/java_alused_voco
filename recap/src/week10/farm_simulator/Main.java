@@ -68,29 +68,46 @@ public class Main {
 //            System.out.println("");
  //       }
 
-        Barn barn = new Barn(new BulkTank());
-        System.out.println("Barn: " + barn);
+//        Barn barn = new Barn(new BulkTank());
+//        System.out.println("Barn: " + barn);
+//
+//        MilkingRobot robot = new MilkingRobot();
+//        barn.installMilkingRobot(robot);
+//
+//        Cow ammu = new Cow();
+//        ammu.liveHour();
+//        ammu.liveHour();
+//
+//        barn.takeCareOf(ammu);
+//        System.out.println("Barn: " + barn);
+//
+//        LinkedList<Cow> cowList = new LinkedList<Cow>();
+//        cowList.add(ammu);
+//        cowList.add(new Cow());
+//
+//        for(Cow cow: cowList) {
+//            cow.liveHour();
+//            cow.liveHour();
+//        }
+//
+//        barn.takeCareOf(cowList);
+//        System.out.println("Barn: " + barn);
 
-        MilkingRobot robot = new MilkingRobot();
-        barn.installMilkingRobot(robot);
+//        Farm farm = new Farm("Esko", new Barn(new BulkTank()));
+//        System.out.println(farm);
+//
+//        System.out.println(farm.getOwner() + " is a tough guy!");
 
-        Cow ammu = new Cow();
-        ammu.liveHour();
-        ammu.liveHour();
+        Farm farm = new Farm("Esko", new Barn(new BulkTank()));
+        farm.addCow(new Cow());
+        farm.addCow(new Cow());
+        farm.addCow(new Cow());
 
-        barn.takeCareOf(ammu);
-        System.out.println("Barn: " + barn);
+        farm.liveHour();
+        farm.liveHour();
 
-        LinkedList<Cow> cowList = new LinkedList<Cow>();
-        cowList.add(ammu);
-        cowList.add(new Cow());
+        farm.manageCows();
 
-        for(Cow cow: cowList) {
-            cow.liveHour();
-            cow.liveHour();
-        }
-
-        barn.takeCareOf(cowList);
-        System.out.println("Barn: " + barn);
+        System.out.println(farm);
     }
 }
