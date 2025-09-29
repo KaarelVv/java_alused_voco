@@ -8,7 +8,7 @@ public class RegistrationPlate {
 
     private final String regCode;
     private final String country;
-    private ArrayList<RegistrationPlate> list = new ArrayList<>();
+    private final ArrayList<RegistrationPlate> list = new ArrayList<>();
 
     public RegistrationPlate(String regCode, String country) {
         this.regCode = regCode;
@@ -39,15 +39,11 @@ public class RegistrationPlate {
 
         RegistrationPlate compared = (RegistrationPlate) object;
 
-        if (this.country != compared.country) {
+        if (!Objects.equals(this.country, compared.country)) {
             return false;
         }
 
-        if (this.regCode == null || !this.regCode.equals(compared.regCode)) {
-            return false;
-        }
-
-        return true;
+        return this.regCode != null && this.regCode.equals(compared.regCode);
     }
 
 
@@ -59,6 +55,6 @@ public class RegistrationPlate {
     @Override
     public String toString() {
         return
-                country + " " + regCode;
+                regCode + " " + country;
     }
 }
