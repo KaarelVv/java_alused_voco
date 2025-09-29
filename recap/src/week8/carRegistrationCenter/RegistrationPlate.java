@@ -10,7 +10,7 @@ public class RegistrationPlate {
     private final String country;
     private final ArrayList<RegistrationPlate> list = new ArrayList<>();
 
-    public RegistrationPlate(String regCode, String country) {
+    public RegistrationPlate( String country,String regCode) {
         this.regCode = regCode;
         this.country = country;
     }
@@ -29,21 +29,11 @@ public class RegistrationPlate {
 
     @Override
     public boolean equals(Object object) {
-        if (object == null) {
-            return false;
-        }
-
-        if (getClass() != object.getClass()) {
-            return false;
-        }
-
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
         RegistrationPlate compared = (RegistrationPlate) object;
-
-        if (!Objects.equals(this.country, compared.country)) {
-            return false;
-        }
-
-        return this.regCode != null && this.regCode.equals(compared.regCode);
+        return Objects.equals(country, compared.country) &&
+                Objects.equals(regCode, compared.regCode);
     }
 
 
@@ -55,6 +45,6 @@ public class RegistrationPlate {
     @Override
     public String toString() {
         return
-                regCode + " " + country;
+                country + " " + regCode;
     }
 }

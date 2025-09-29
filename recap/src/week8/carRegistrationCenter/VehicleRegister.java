@@ -7,11 +7,8 @@ public class VehicleRegister {
     private final Map<RegistrationPlate, String> owners = new HashMap<>();
 
     public boolean add(RegistrationPlate plate, String owner) {
-        List<RegistrationPlate> plates = new ArrayList<>(owners.keySet());
-        if (plates.contains(plate)) {
-            return false;
-        } else owners.put(plate, owner);
-        return true;
+        // returns true iff there was no previous owner
+        return owners.putIfAbsent(plate, owner) == null;
     }
 
     public String get(RegistrationPlate plate) {
@@ -19,23 +16,18 @@ public class VehicleRegister {
     }
 
     public boolean delete(RegistrationPlate plate) {
-        if (owners.containsKey(plate)) {
-            owners.remove(plate);
-            return true;
-        } else
-            return false;
+        return owners.remove(plate) != null;
     }
 
     public void printRegistrationPlates() {
-        List<RegistrationPlate> plates = new ArrayList<>(owners.keySet());
-        for (RegistrationPlate p : plates) {
+        for (RegistrationPlate p : owners.keySet()) {
             System.out.println(p);
         }
     }
 
     public void printOwners() {
-        List<String> ownerNames = new ArrayList<>(owners.values());
-        Set<String> unique = new HashSet<>(ownerNames);
+
+        Set<String> unique = new HashSet<>(owners.values());
         for (String s : unique) {
             System.out.println(s);
         }
