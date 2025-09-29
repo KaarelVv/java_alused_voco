@@ -2,9 +2,9 @@ package week8.online_shop;
 
 public class Purchase {
 
-    private String product;
+    private final String product;
     private int amount;
-    private int unitPrice;
+    private final int unitPrice;
 
     public Purchase(String product, int amount, int unitPrice) {
         this.product = product;
@@ -14,7 +14,6 @@ public class Purchase {
 
     public int price() {
         return this.amount * this.unitPrice;
-
 
     }
 

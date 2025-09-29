@@ -8,19 +8,28 @@ public class ShoppingBasket {
     public ShoppingBasket() {
     }
 
-    public void add(String product, int price){
-
-    if(purchase.containsKey(product)){
-        purchase.get(product).increaseAmount();
-    } else
-        purchase.put(product,new Purchase(product,1,price));
+    public void add(String product, int price) {
+        if (purchase.containsKey(product)) {
+            purchase.get(product).increaseAmount();
+        } else
+            purchase.put(product, new Purchase(product, 1, price));
     }
 
-    public int price(){
-        List<Integer> values = new ArrayList<>();
-            for (int value: values){
+    public int price() {
+        List<Purchase> values = new ArrayList<>(purchase.values());
+        int basketPrice = 0;
+        for (Purchase i : values) {
+            basketPrice += i.price();
+        }
+        return basketPrice;
+    }
 
-            }
-        return 0;
+    public void print() {
+        List<Purchase> values = new ArrayList<>(purchase.values());
+
+        for (Purchase i : values) {
+            System.out.println(i);
+        }
+
     }
 }

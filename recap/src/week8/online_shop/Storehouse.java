@@ -42,7 +42,6 @@ public class Storehouse {
         }
         return -99;
     }
-
     public int stock(String product) {
 
         Set<String> keys = stockData.keySet();
@@ -69,7 +68,6 @@ public class Storehouse {
     }
 
     public Set<String> products(){
-
         return this.stockData.keySet();
     }
 }
